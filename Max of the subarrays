@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+        public class First {
+                public static void main(String[] args) {
+                        Scanner f = new Scanner(System.in);
+                        int a = f.nextInt();
+                        while(a>0){
+                          int u = 0;
+                          int b = f.nextInt();
+                          int y = b;
+                          int d = b;
+                          int [] array = new int [d];
+                                while(b>0){
+                                int e = f.nextInt();
+                                array[u] = e;
+                                b--;
+                                u++;
+                                }
+                                int z = y;
+                                int r = 1;
+                                int p = y;
+                                int counter=1;
+                                while(y>0){
+                                    int q=0;
+                                for(int v = 0; v<z; v++){
+                                        boolean flag = false;
+                                        int max=0;
+                                for(;q<r;q++){
+                                        if(flag==false){
+                                                max = array[q];
+                                                flag = true;
+                                        }
+                                        else{
+                                        if(max<array[q]){
+                                                max = array[q];
+                                                }
+                                        }
+                                }
+                                System.out.print(max+" ");
+                                r++;
+                                if(p>y){
+                                q--;
+                                }
+                               }
+                               counter++;
+                               z--;
+                               y--;
+                               r=counter;
+                        }
+                          a--;
+                          System.out.println();
+                        }
+                }
+        }  
+        
