@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+        public class First {
+                public static void main(String[] args) {
+                       long [] array = new long[50];
+                       array [0] = 0;
+                       array [1] = 1;
+                       for(int q = 2; q<array.length; q++){
+                        array[q] = array[q-1]+array[q-2];
+                       }
+                       Scanner f = new Scanner(System.in);
+                       int y = f.nextInt();
+                       System.out.println(array[y-1]); // If the user put 1, the program will print 0 to guarantee that all of the elements of the array 'll be printed! 
+                }
+        }  
+        
