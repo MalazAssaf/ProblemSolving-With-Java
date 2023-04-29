@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+        public class First {
+                public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int a = f.nextInt();
+                    while(a>0){
+                        int w = f.nextInt();
+                        int [] array = new int [w];
+                        int s = w;
+                        for(int i =0; i<array.length; i++){ // To fill the array with elements
+                                int u = f.nextInt();
+                                array[i] = u;
+                        }
+                        int counter =0;
+                        int j = 0;
+                        while(s>0){ // To calculate how many subarrays we have
+                          boolean v = false; 
+                          int min = 0;
+                          int o = j;
+                         while(o<array.length){
+                                if(v!=true){ // To make a pointer starts from the first index
+                                   min = array[o];
+                                   v=true;
+                                   counter++;
+                                }
+                                else{
+                                        if(min<=array[o]){ // if the element bigger than the pointer, we get a subarray
+                                                min=array[o]; // Move the pointer to the next index to check the whole elements of the index (o)
+                                                counter++;
+                                        }
+                                        else {
+                                                break;
+                                        }
+                                }
+                                min=array[o];
+                                o++;
+                          }
+                          s--;
+                          j++;
+                        }
+                        System.out.println(counter);
+                        a--;
+                    }
+                }
+        }  
+        
