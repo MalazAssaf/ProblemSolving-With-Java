@@ -1,0 +1,27 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int element_Array = f.nextInt();
+                    long [] array = new long[element_Array];
+                    long [] array2 = new long[element_Array];
+                    int sum1= 0;
+                    int sum2 = 0;
+                    for(int i =0; i<array.length; i++){
+                        long element = f.nextLong();
+                        sum1+=element; // A simple way to compare the elements of both arrays
+                    }
+                    for(int j =0; j<array2.length; j++){
+                        long element2 = f.nextLong();
+                        sum2+=element2; // A simple way to compare the elements of both arrays
+                    }
+                    if(sum1 == sum2){ // If the sum of both arrays is the same, the elements of the arrays are similar
+                        System.out.println("yes");
+                    }
+                    else{
+                        System.out.println("no");
+                    }
+                    
+                }
+        }  
+        
