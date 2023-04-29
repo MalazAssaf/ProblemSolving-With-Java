@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+        public class First {
+                public static void main(String[] args) {
+                     Scanner f = new Scanner(System.in);
+                     int q = f.nextInt();
+                     int [] array = new int [q];
+                     for(int z = 0; z<array.length; z++){
+                        int w = f.nextInt();
+                        array[z] = w;
+                     }
+                     int e =q;
+                     while(q>0){
+                                int counter = 0;
+                        for(; array[q-1]>0; array[q-1]/=2){ // array[q-1] because q is 3 and the size of the array is 3, so because of indexing of the array
+                        // start ar 0! 
+                                if(array[q-1]%2!=0){
+                                        break;
+                                }
+                                if(array[q-1]%2==0){
+                                        counter++;
+                                }
+                        }
+                        array[q-1] = counter; // to replace the value with how many time it can be divided by 2
+                        q--;
+                     }
+                     // To find the min number
+                        boolean r = false;
+                        int min = 0;
+                        for(int u = 0; u<array.length; u++){
+                                if(r!= true){
+                                 min = array[u];
+                                 r = true;
+                                }
+                                else{
+                                        if(min>=array[u]){
+                                                min = array[u];
+                                        }
+                                }
+                        }
+                        System.out.println(min);
+                     
+                }
+        }  
+        
