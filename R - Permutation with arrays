@@ -1,0 +1,93 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int element_Array = f.nextInt();
+                    int [] array = new int[element_Array];
+                    int [] array2 = new int[element_Array];
+                   
+                    for(int i =0; i<array.length; i++){
+                        int element = f.nextInt();
+                        array[i] = element;
+                        }
+                        
+                    for(int j =0; j<array2.length; j++){
+                        int element2 = f.nextInt();
+                        array2[j]=element2;
+                    }
+                  
+                    int capacity_ofArray=array.length;
+                    // Sorting the array by finding the max element and then change its position with the last element
+                    while (capacity_ofArray>0){
+                        int e = 0;
+                        int max = -1;
+                        int counter = 0;
+                        int num2 = 0;
+                        boolean first_Element = false;
+                        for(;e<=capacity_ofArray-1;e++){
+                            if(first_Element!=true){
+                                max = array[e];
+                                first_Element = true;
+                            }
+                            else {
+                                if(max<=array[e]){
+                                    max = array[e];
+                                    num2 = counter;
+                                }
+                            }
+                            counter++;
+                        }
+                        int pointer = array[e-1]; // decrease the value of e because the for loop will end and the value of e would be equals to array.length
+                        array [e-1] = max;
+                        array[num2] = pointer;
+                        capacity_ofArray--;
+                    }
+                     capacity_ofArray=array.length;
+                    while (capacity_ofArray>0){
+                        int e = 0;
+                        int max = -1;
+                        int counter = 0;
+                        int num2 = 0;
+                        boolean first_Element = false;
+                        for(;e<=capacity_ofArray-1;e++){
+                            if(first_Element!=true){
+                                max = array2[e];
+                                first_Element = true;
+                            }
+                            else {
+                                if(max<=array2[e]){
+                                    max = array2[e];
+                                    num2 = counter;
+                                }
+                            }
+                            counter++;
+                        }
+                        int pointer = array2[e-1];
+                        array2 [e-1] = max;
+                        array2[num2] = pointer;
+                        capacity_ofArray--;
+                    }
+                    for(int r = 0; r<=array.length-1;r++){
+                        System.out.print(array[r]+" ");
+                    }
+                    System.out.println();
+                    for(int r2 = 0; r2<=array.length-1;r2++){
+                        System.out.print(array2[r2]+" ");
+                    }
+                    int compare =0;
+                    for(int x = 0; x<=array.length-1;x++){
+                        if(array2[x]==array[x]){
+                            compare++;
+                        }
+                    }
+                    if(compare== element_Array){
+                        System.out.println("yes");
+                    }
+                    else{
+                        System.out.println("no");
+                    }
+                   
+                    
+                }
+        }  
+        
