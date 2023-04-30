@@ -1,0 +1,32 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int row = f.nextInt();
+                    int [] [] Array2D = new int [row][row]; // The array takes rows as it takes columns, so there is no need to declare another variable
+                    // Filling the 2D Array with elements
+                    for(int i =0; i<row; i++){ 
+                        for(int j =0; j<row; j++){
+                            int element = f.nextInt();
+                            Array2D [i][j] = element;
+                        }
+                    }
+               
+                    int sum=0;
+                    // Makes the pointer moving diagonally to get the elements at positions:
+                    // [0,0] [1,1] [2,2] [3,3]
+                    for(int z=0,  j = 0; z<row& j<row; z++,j++){
+                        sum+=Array2D[z][j];
+                    }
+                    
+                    int sum2=0;
+                     // Makes the pointer moving diagonally, but from the other direction to get the elements at positions:
+                      // [0,3] [1,2] [2,1] [3,0]
+                    for(int z=0, j= row-1; z<row& j>=0; z++,j--){
+                        sum2+=Array2D[z][j];
+                    }
+                    int difference =Math.abs(sum - sum2);
+                    System.out.println(difference);
+                }
+        }  
+        
