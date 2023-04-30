@@ -1,0 +1,35 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int row = f.nextInt();
+                    int column = f.nextInt();
+                    int [] [] Array2D = new int [row][column];
+                    // Filling elements into 2D array
+                    for(int i =0; i<row; i++){
+                        for(int j = 0; j<column; j++){
+                            int element = f.nextInt();
+                            Array2D[i][j]=element;
+                        }
+                    }
+                    boolean flag = false;
+                    int search = f.nextInt();
+                    // Seeing if the user's input exists in the 2D Array or not
+                    for(int i =0; i<row; i++){
+                        for(int j = 0; j<column; j++){
+                            if(search == Array2D[i][j]){
+                            flag = true;
+                            break;
+                            }
+                        }
+                    }
+                    if(flag == true){
+                        System.out.println("will not take number");
+                    }
+                    else{
+                        System.out.println("will take number");
+
+                    }
+                }
+        }  
+        
