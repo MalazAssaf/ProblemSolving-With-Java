@@ -1,0 +1,65 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int element = f.nextInt();
+                    int element2 = f.nextInt();
+                    int [] array = new int [element];
+                    for(int i =0; i<element; i++){
+                        int a = f.nextInt();
+                        array[i] = a;
+                    }
+                    int [] array2 = new int [element2];
+                    for(int i =0; i<element2; i++){
+                        int b = f.nextInt();
+                        array2[i] = b;
+                    }
+                        int flag = 0;
+                        if(array2.length>array.length){ // To see if the size of the second array is smaller or not
+                            flag = 1;
+                        }
+                      
+                        for(int i =0; i<array2.length-1; i++){ // Finding the elements of the second array
+                            int swap = array2[i]; // storing the values of the elements to use them later
+                            int swap2 = array2[i+1];;
+                            int x = -1;
+                            int y = -1;
+                            int pos = i; // storing the index because I will use this in the comparison later
+                            int pos2 = i+1;
+                            boolean flag2 = false;
+                            boolean flag3 = false;
+
+                            for(int j = 0; j<array.length;j++ ){ // looking for in the first array the elemnts of the second array we stored 
+                                if(swap==array[j]&&flag2 ==false){ // puts two conditions to guarantee that the loop will stop after finding one element
+                                    x = j;
+                                    flag2 = true;
+                                }
+                                else if (swap2==array[j]&&flag3 == false){
+                                    y = j;
+                                    flag3 = true;
+                                }
+                            }
+                            if(x==-1|y==-1){
+                                flag = 1;
+                                break;
+                            }
+                            boolean result = x>y;
+                            if(pos>pos2==result){
+                            }
+                            else{
+                                flag = 1;
+                                break;
+                            }
+
+                        }
+                     
+                    if(flag == 0 ){
+                        System.out.println("YES");
+                    }
+                    else{
+                        System.out.println("NO");
+                    }
+                 
+                }
+        }  
+        
