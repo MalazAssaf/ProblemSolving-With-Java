@@ -1,0 +1,22 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int size = f.nextInt(); 
+                    int Upper = f.nextInt(); // The number of numbers that the user must enters
+                    int [] array = new int [1000001]; // The size is 1000001 because we inverse the index with the value! 
+                    for(int i =0; i<size; i++){
+                        int num = f.nextInt(); // the user could put any number until 1000001
+                        if(array[num]==0){ // The number that the user puts becoming the index of the array! 
+                            array[num]=1;
+                        }
+                        else{
+                            array[num]+=1; // Whenever the user puts the number again, increase the value of the array of index that the user puts
+                        }
+                    }
+                    for(int i =1; i<=Upper;i++){ // Printing the frequencey of the elements that you put
+                        System.out.println(array[i]);
+                    }
+                }
+        }  
+        
