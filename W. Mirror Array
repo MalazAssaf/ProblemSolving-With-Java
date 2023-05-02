@@ -1,0 +1,33 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int row = f.nextInt();
+                    int column = f.nextInt();        
+                    int [] [] array = new int [row][column];
+                    for(int i =0; i<row; i++){ // Fill the array with elements
+                        for(int j = 0; j<column; j++){
+                        int element = f.nextInt();
+                        array[i][j] = element;
+                    }
+                }
+
+                for(int i =0; i<row; i++){
+                    int capacity = column-1; // Declaring a variable to hold the value of the column that we are gonna change
+                    for(int j = 0; j<column/2; j++){ // We dividing on 2 because if we do not so, the elements will have the same values! 
+                        int swap = array[i][capacity]; // Swaping elements, I did that to hold the value of the element to use it later
+                        array[i][capacity] =  array[i][j];
+                        array[i][j]= swap;
+                        capacity--;
+                }
+            }
+                    for(int i =0; i<row; i++){
+                        for(int j = 0; j<column; j++){
+                            System.out.print(array[i][j]+" ");
+                        }
+                        System.out.println();
+                    }
+                    
+                }
+        }  
+        
