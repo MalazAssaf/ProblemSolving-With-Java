@@ -1,0 +1,29 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int row = f.nextInt();
+                    int column = f.nextInt();        
+                    char [] [] array = new char [101][101];
+                    for(int i =1; i<=row; i++){
+                        for(int j = 1; j<=column; j++){
+                        char element = f.next().charAt(0);
+                        array[i][j] = element;
+                    }
+                }
+                int rowIn = f.nextInt();
+                int columnIn = f.nextInt();
+                // A way to check the 8 sides although the element has only 3 sides as 0,0! That is why I increase the size of the array
+      
+               if(array[rowIn-1][columnIn-1]!='.'&&array[rowIn-1][columnIn]!='.'&&array[rowIn-1][columnIn+1]!='.'
+               && array[rowIn][columnIn-1]!='.'&&array[rowIn][columnIn+1]!='.'&&array[rowIn+1][columnIn-1]!='.'
+               &&array[rowIn+1][columnIn]!='.'&&array[rowIn+1][columnIn+1]!='.'){
+                System.out.println("yes");
+               }
+               else{
+                System.out.println("no");
+               }
+                    
+                }
+        }  
+        
