@@ -1,0 +1,41 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int cases = f.nextInt();
+                    long []arrayOfCases = new long [100]; // An array to store the min values
+                    int numOfCases = 0;
+                    int counter = 0;
+                    while(cases>0){
+                        int element = f.nextInt();
+                        long [] array = new long[element];
+                        for(int i =0; i<array.length; i++){
+                            long num = f.nextLong();
+                            array[i]=num;
+                        }
+                        boolean flag = false;
+                        long min = 0;
+                        for(int u =0; u<array.length; u++){
+                            for(int j = u+1; j<array.length; j++){ // A way to compare the values of the sum to get the min values
+                                if(flag!=true){
+                                    min = array[u]+array[j]+(j+1)-(u+1);
+                                    flag = true;
+                                }
+                                else{
+                                long sum = array[u]+array[j]+(j+1)-(u+1);
+                                if(sum<=min){
+                                    min = sum;
+                                }
+                            }
+                        }
+                    }
+                    cases--;
+                    arrayOfCases[numOfCases] = min; // Store the values of the min numbers in the array to print them later
+                    numOfCases++;
+                    counter++; // Increase the value of the counter whenever a min value stores in the array
+                }
+                for(int e =0; e<counter; e++){ // Print the min values 
+                    System.out.println(arrayOfCases[e]);
+                }
+        }  
+        }
