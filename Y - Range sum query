@@ -1,0 +1,36 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int num = f.nextInt();
+                    int query = f.nextInt();
+                    long [] array = new long [num];
+                    for(int i =0; i<array.length; i++)
+                    {
+                        long element = f.nextLong();
+                        array[i] = element;           
+                    }
+                    long [] array2 = new long[num];
+                    for(int i =0; i<array2.length; i++){
+                        if(i==0){
+                            array2[i] = array[i];
+                        }
+                        else{
+                            array2[i]= array[i]+array2[i-1]; // A way to sums the elements of the array to usse them later
+                        }
+                    }
+                    long [] array3 = new long [query];
+                    int cap = query;
+                    int var = 0;
+                    while(cap>0){
+                        int min = f.nextInt();
+                        int max = f.nextInt();
+                        array3[var]=array2[max-1]-array2[min-1]+array[min-1]; // The final operation to get the value from min to max
+                        var++;
+                        cap--;
+                    }
+                    for(int i =0; i<array3.length; i++){
+                        System.out.println(array3[i]);
+                    }
+                }
+        }  
