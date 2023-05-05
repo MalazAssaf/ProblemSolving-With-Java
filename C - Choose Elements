@@ -1,0 +1,41 @@
+    import java.util.Scanner;
+            public class First {
+                public static void main(String[] args) {
+                        Scanner f = new Scanner(System.in);
+                        int size = f.nextInt();
+                        long [] array = new long [size];
+                        int k = f.nextInt();
+                        for(int i =0; i<size; i++){
+                            int element = f.nextInt();
+                            array[i] = element;
+                        }
+                        long sum = 0;
+                        int max = 0;
+                        while(max<k){ // A way to get the maximum numbers of the array as the user requests
+                            int counter = 0;
+                            long min = 0;
+                            boolean flag = false;
+                        for(int i =0; i<array.length;i++){
+                            if(flag!=true){
+                                min = array[i];
+                                flag = true;
+                            }
+                            else{
+                                if(array[i]>min){
+                                    min = array[i];
+                                    counter = i; // to use later
+                                }
+                            }
+                        }
+                        sum+=min;
+                        array[counter] = 0; // remove the value of the item we used
+                        max++;
+                    }
+                    if(sum>0){
+                    System.out.println(sum);
+                    }
+                    else{
+                        System.out.println(0);
+                    }
+            }  
+            }
