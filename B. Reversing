@@ -1,0 +1,31 @@
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    int num = f.nextInt();
+                    int [] array = new int[num];
+                    for(int i = 0; i<array.length; i++){
+                        int element = f.nextInt();
+                        array[i] = element;
+                    }
+                    int counter = 0;
+                    for(int i =0; i<array.length; i++){
+                            if(array[i]==0){
+                                counter = i;
+                                int swaper = counter-1;
+                                for(int j = 0; j<counter/2; j++){ // A way to reverse the order of the elements that come before 0
+                                // I divided counter by 2 because the elements would be the same if I do not do so
+                                    int swap = array[swaper];
+                                    array[swaper] = array[j];
+                                    array[j] = swap;
+                                    swaper--;
+                                }
+                        }
+                    }
+                  
+                    for(int i =0; i<array.length;i++){
+                        System.out.print(array[i]+" ");
+                    }
+                    
+        }  
+        }
