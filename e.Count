@@ -1,0 +1,18 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    String a = f.nextLine();
+                    char [] array = new char [a.length()];
+                    long sum = 0;
+                    for(int i = 0  ; i<array.length; i++){
+                        array[i] = a.charAt(i); // to convert the string to an array of char
+                        sum+=array[i]-'0'; // to conver the char to int
+                    }
+                    System.out.println(sum);
+                    
+ 
+        }  
+        }
