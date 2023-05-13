@@ -21,8 +21,8 @@ import java.util.Scanner;
                             }
                         else{
                             if(min==array[j]){
-                                counter++; // increase the frequency of the latter
-                                array[j] = '0'; // make it empty to not use it latter
+                                counter++; // increase the frequency of the letter
+                                array[j] = '0'; // make it empty to not use it later
                             }
                         }
                     }
