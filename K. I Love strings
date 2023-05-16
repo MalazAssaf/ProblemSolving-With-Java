@@ -1,0 +1,44 @@
+import java.lang.reflect.Array;
+import java.util.Scanner;
+        public class First {
+            public static void main(String[] args) {
+                Scanner f = new Scanner(System.in);
+                Scanner f2 = new Scanner (System.in);
+                Scanner f3 = new Scanner (System.in);
+
+                int cases = f.nextInt();
+                while(cases>0){
+                    String Ilove = f2.nextLine();
+                    String Ihate = f3.nextLine();
+                    int size = Ilove.length()+Ilove.length(); // Summing the size of both arrays to not use more than 1 for loop later
+                    char [] array = new char[Ilove.length()];
+                    char [] array2 = new char[Ihate.length()];
+                    for(int i = 0 ; i<Ilove.length(); i++){
+                        array[i] = Ilove.charAt(i);
+                    }
+                    for(int i = 0 ; i<Ihate.length(); i++){
+                        array2[i] = Ihate.charAt(i);
+                    }
+                
+                    int flag = 1;
+                    int flag2 = 1;
+                    for(int i = 0 ; i<size ; i++){
+                        if(array.length!=i&&flag==1){ 
+                            System.out.print(array[i]);
+                        }
+                        else{
+                            flag = 0; // A condition if the array reaches the last index
+                        }
+                        if(array2.length!=i&&flag2==1){
+                            System.out.print(array2[i]);
+                        }
+                        else{
+                            flag2 = 0;
+                        }
+                    }
+                    System.out.println();
+                    cases--;
+                }
+            
+            }
+            }
