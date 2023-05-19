@@ -1,0 +1,42 @@
+import java.lang.reflect.Array;
+import java.util.Scanner;
+
+import javax.swing.text.DefaultStyledDocument.ElementSpec;
+        public class First {
+            public static void main(String[] args) {
+               Scanner f = new Scanner(System.in);
+               Scanner f2 = new Scanner(System.in);
+               int size = f.nextInt();
+               String word = f2.nextLine();
+               char[]array=new char[size];
+               for(int i = 0 ; i<size; i++){
+                array[i] = word.charAt(i);
+               }
+               for(int i = 0 ; i<size; i++){ // Sorting the string we get
+                    boolean flag = false;
+                    char min = ' ';
+                    int swaper = 0; // To get the index of the char that the pointer stops at when finds the minimum
+                    for(int j = i; j<size; j++){
+                        if(flag!=true){
+                            min = array[i];
+                            flag = true;
+                            swaper = j; // To give the swaper value when there is not a number that lower than the min.
+                            // If I do not do this, the result would be wrong
+                        }
+                        else{
+                            if((int)array[j]<(int)min){
+                                min = array[j];
+                                swaper = j;
+                            }
+                        }
+                    }
+                    char temp = array[i]; 
+                    array[i] = min;
+                    array[swaper] = temp;
+               }
+               for(int i = 0 ; i<size; i++){
+                System.out.print(array[i]);
+               }
+                }
+            }
+            
