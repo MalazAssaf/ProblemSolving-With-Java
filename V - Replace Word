@@ -1,0 +1,23 @@
+import java.lang.reflect.Array;
+import java.util.Scanner;
+
+import javax.swing.text.DefaultStyledDocument.ElementSpec;
+        public class First {
+            public static void main(String[] args) {
+               Scanner f = new Scanner(System.in);
+               String word = f.nextLine();
+               char [] array = new char [word.length()];
+                for(int i = 0; i<array.length; i++){
+                    array[i] = word.charAt(i);
+                }
+                for(int i = 0 ; i<array.length; i++){
+                    if(array[i]=='E'&&array[i+1]=='G'&&array[i+2]=='Y'&&array[i+3]=='P'&&array[i+4]=='T'){
+                        System.out.print(" "); // Igonre Egypt
+                        i+=4; // Increases it to ignore all egypt
+                    }
+                    else{
+                        System.out.print(array[i]);
+                    }
+                }
+            }
+        }
