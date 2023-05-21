@@ -1,0 +1,63 @@
+import java.util.Scanner;
+ 
+public class Malaz{
+    public static void main(String[] args) {
+        Scanner f = new Scanner(System.in);
+        String name = f.nextLine();
+        char [] array = new char [name.length()];
+        int size = array.length;
+        for(int i = 0 ; i <array.length; i++){
+            array[i] = name.charAt(i);
+        }
+        int p = 0;
+        int counter = 0;
+        int c = 0;
+        char [] array2 = new char [10000];
+        int r = 0;
+        int l = 0;
+        while(size>0){
+            for(; p < array.length; p++){
+                 if(array[p]=='R'){ // To calculate how many R are there
+                    r++;
+                    array2[c] = 'R';
+                    c++;
+                    if (r==l&(r!=0||l!=0)){ // To see if the number of R is equal to L
+                        counter++;
+                        p++; // should be increasesd because the loop will be broken after this and p value will not change 
+                        break;
+                    }
+                }
+                else if(array[p]=='L'){
+                    l++;
+                    array2[c] = 'L';
+                    c++;
+                    if (r==l&(r!=0||l!=0)){
+                        counter++;
+                        p++;
+                        break;
+                    }
+                }
+            }
+            size--;
+        }
+        System.out.println(counter);
+        int q = 0;
+        int u = 0;
+        for(int e = 0 ; e < array.length; e++){
+            if (q==u&( q!=0||u!=0)){
+                System.out.println();
+                e--; // To not increase e value so a value of the array will be missed
+                q=0;
+                u=0;
+            }
+            else if (array[e]=='R'){
+                System.out.print(array2[e]);
+                q++;
+            }
+            else if (array2[e]=='L'){
+                System.out.print(array2[e]);
+                u++;
+            }    
+        }
+    }
+}
