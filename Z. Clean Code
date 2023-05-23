@@ -1,0 +1,44 @@
+import java.lang.reflect.Array;
+import java.util.Scanner;
+
+        public class First {
+            public static void main(String[] args) {
+               Scanner f = new Scanner(System.in);
+               boolean open = false;
+               int q = 0;
+                while(f.hasNextLine()){ // The program ends when the user does not entry data
+                // It is not a hard code at all! 
+                    boolean flag = false;
+                    String word = f.nextLine();
+                    char[] array = new char [word.length()];
+                    if(array.length==0||word==" "){ // when I say continue the program will ignore the remaining of the code and back to the while
+                        continue;
+                    }
+                    for(int i = 0; i<array.length; i++){
+                        array[i] = word.charAt(i);
+                    }
+                    for(int i = 0 ; i <array.length;i++){
+                        if((array[i]=='/'&&array[i+1]=='/')&&(!open)){
+                            break;
+                        }
+                        else if(i<array.length-1&&array[i]=='/'&array[i+1]=='*'){
+                            open = true;
+                            i++;
+                        }
+                        else if(i<array.length-1&&array[i]=='*'&array[i+1]=='/'&&open){
+                            open = false;
+                            i++;
+                               }
+                            
+                        else if(!open){
+                            System.out.print(array[i]);
+                            flag = true;
+                        }
+                    }
+                    if(flag){
+                        System.out.print("\n");
+                    }
+                    q++;
+                }
+            }
+        }
