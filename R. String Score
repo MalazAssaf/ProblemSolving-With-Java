@@ -1,0 +1,46 @@
+import java.lang.reflect.Array;
+import java.util.Scanner;
+
+        public class First {
+            public static void main(String[] args) {
+               Scanner f = new Scanner(System.in);
+               Scanner f2 = new Scanner(System.in);
+               int size = f.nextInt();
+               String word = f2.nextLine();
+               char [] array = new char [word.length()];
+               for(int i = 0 ; i<array.length; i++){
+                array[i]= word.charAt(i);
+               }
+               long score = 0;
+               for(int i = 0; i< array.length; i++){
+                if(array[i]=='V'){
+                    score+=5;
+                }
+                else if(array[i]=='W'){
+                    score+=2;
+                }
+                else if(array[i]=='X'&&i<array.length-1){
+                    array[i+1]='0';
+                }
+                else if(array[i]=='Y'){
+                    char swap = array[i+1]; // Store the value of the next char
+                    for(int j = i+1; j<array.length-1; j++){ // Rearrange the values of the array to make the last one empty
+                        array[j] = array[j+1];
+                    }
+                    array[array.length-1] = swap; // fill the last index with the stored element
+                }
+                else if(array[i]=='Z'&&i<array.length-1){
+                    if(array[i+1]=='W'){
+                        score/=2;
+                        array[i+1]='0'; // Get rid of the element (Reomve it) 
+                    }
+                    else if(array[i+1]=='V'){
+                        score/=5;
+                        array[i+1]='0';
+                    }
+                }
+               }
+                System.out.println(score);
+                
+            }
+        }
