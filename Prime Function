@@ -1,0 +1,33 @@
+    import java.util.Scanner;
+        public class Sheet {
+            public static void main(String[] args) {
+                Scanner f = new Scanner (System.in);
+                Long num = f.nextLong();
+                int cases = 0;
+                while(cases<num){
+                    Long number = f.nextLong();
+                    if(primeFunction(number))
+                        System.out.println("NO");
+                    else
+                        System.out.println("YES");
+                    cases++;
+                }
+            }
+                public static boolean primeFunction(Long num){
+                    boolean flag = false;
+                    if(num==1){ // because 1 is a prime number!
+                        flag = true;
+                    }
+                    else{
+                    for(int i =2; i<=Math.sqrt(num);i++){ // Taking the square root will guarantee that less time would be required to complete the process
+                        if(num%i==0){
+                            flag = true;
+                            break;
+                        }
+                    }
+                }
+                    return flag;
+            }
+                
+            }
+          
