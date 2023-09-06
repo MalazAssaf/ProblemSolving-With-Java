@@ -1,0 +1,55 @@
+    import java.util.Scanner;
+
+        public class Sheet {
+
+            public static void main(String[] args) {
+                Scanner in2 = new Scanner(System.in);
+                int n = in2.nextInt();
+                int x = in2.nextInt();
+                int y = in2.nextInt();
+                int [] [] array = new int[n][n];
+                for(int i =0; i<n;i++){
+                    for(int j = 0; j<n; j++){
+                        int element = in2.nextInt();
+                        array[i][j] = element;
+                    }
+                }
+                changeRow(array, x-1, y-1); // x-1 & y-1 Because index in array starts from 0 and the problem starts from 1
+                changeColumn(array, x-1, y-1);
+                print(array);
+            }
+            public static void changeRow(int [] [] array, int x, int y){
+                int [] swappingArray = new int[array.length]; // To store the items of one row or column to swap it later
+                for(int i = 0; i <array.length;i++){
+                    swappingArray[i] = array[x][i];
+                }
+                for(int i =0; i<array.length; i++){
+                    array[x][i] = array[y][i];
+                    array[y][i] = swappingArray[i];
+                }
+            }
+            public static void changeColumn(int [] [] array, int x, int y){
+                int [] swappingArray = new int[array.length];
+                for(int i = 0; i <array.length;i++){
+                    swappingArray[i] = array[i][x];
+                }
+                for(int i =0; i<array.length; i++){
+                    array[i][x] = array[i][y];
+                    array[i][y] = swappingArray[i];
+                }
+            }
+
+            public static void print(int [][] array){
+                double n = array.length;
+                for(int i =0; i<n;i++){
+                    for(int j = 0; j<n; j++){
+                        System.out.print(array[i][j]+" ");
+                    }
+                    System.out.print("\n");
+                }
+            }
+        }
+                
+          
+
+        
