@@ -1,0 +1,43 @@
+    import java.util.Scanner;
+
+        public class Sheet {
+
+            public static void main(String[] args) {
+                Scanner in2 = new Scanner(System.in);
+                int size = in2.nextInt();
+                int [] array = new int [size];
+                for(int i = 0 ; i<size; i++){
+                    int element = in2.nextInt();
+                    array[i] = element;
+                }
+                zeroToRight(array);
+                
+            }
+            public static void zeroToRight(int[]array){
+                int count = 0; // to see how many zeros there are
+                for(int i = 0; i<array.length;i++){
+                    if(array[i]==0){
+                        count++;
+                    }
+                }
+                int size = array.length-1;
+                while(count!=0){
+                    for(int i = 0 ; i<array.length;i++){
+                        if(array[i]==0){
+                            for(int j = i; j<array.length-1;j++){
+                                array[j]=array[j+1];
+                            }
+                            array[size]=0; // array[size] becuase more than one zero might be there, so I might need more than one place!
+                        }
+                    }
+                    size--;
+                    count--;
+                }
+                for(int i =0; i<array.length;i++){
+                    System.out.print(array[i]+" ");
+                }
+            }
+            
+    }
+
+        
