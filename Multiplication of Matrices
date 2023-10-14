@@ -1,0 +1,42 @@
+import java.util.Scanner;
+ 
+        public class Sheet {
+ 
+            public static void main(String[] args) {
+                Scanner in2 = new Scanner(System.in);
+                int row = in2.nextInt();
+                int column = in2.nextInt();
+                int array[][] = new int[row][column];
+                for(int i = 0 ; i < row; i++){
+                    for(int j = 0; j<column; j++){
+                        int element = in2.nextInt();
+                        array[i][j] = element;
+                    }
+                }
+                int row2 = in2.nextInt();
+                int column2 = in2.nextInt();
+                int array2[][] = new int[row2][column2];
+                for(int i = 0 ; i < row2; i++){
+                    for(int j = 0; j<column2; j++){
+                        int element2 = in2.nextInt();
+                        array2[i][j] = element2;
+                    }
+                }
+                int t = 0; // There are better ways to do it, but this way is not that bad.
+                while(t<row){
+                    for (int i = 0 ; i < column2; i++){ // Starts from the second array
+                        int sum = 0; // Could replace this with sum+= 
+                        int temp = 0; // Could replace this with sum+= 
+                        for(int k = 0; k<row2; k++){ // make the second array goes to the other rows
+                            temp = array2[k][i]*array[t][k];
+                            sum+=temp;
+                        }
+                        System.out.print(sum+" ");
+                    }
+                    System.out.println();
+                    t++;
+                }
+ 
+               
+            }
+    }
