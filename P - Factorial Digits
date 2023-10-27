@@ -1,0 +1,19 @@
+import java.util.Scanner;
+ 
+        public class Sheet {
+ 
+            public static void main(String[] args) {
+                Scanner f = new Scanner(System.in);
+                long num = f.nextInt();
+                int sum = 1;
+                double y = 0;
+                for(int i = 1; i<=num; i++){
+                    y+=Math.log10(i);                    
+                }
+                x =(int) Math.log10(sum)+1;
+                int y1 = (int)y+1;
+                System.out.println("Number of digits of " + num+"! "+ "is "+y1);
+
+            }
+
+}
