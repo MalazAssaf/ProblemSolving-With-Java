@@ -1,0 +1,30 @@
+    import java.util.Scanner;
+    
+            public class Sheet {
+    
+            
+                public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    long a = f.nextLong();
+                    long b = f.nextLong();
+                    long c = f.nextLong();
+                    long d = f.nextLong();
+                    
+                    while(d>0){
+                        long x = f.nextLong();
+                        long y = f.nextLong();
+                        double power =  Math.pow(a, 2)-2*a*x+Math.pow(x,2); // a completed square
+                        double power2 = Math.pow(b ,2)-2*b*y+Math.pow(y,2);
+                        double distance = Math.sqrt(power+power2); // to see if the sum of the two squares are less than or greater than the redious! 
+                        if(distance<=c){
+                            System.out.println("YES");
+                        }
+                        else{
+                            System.out.println("NO");
+                        }
+                        d--;
+                    }
+                
+                }
+                
+    }
