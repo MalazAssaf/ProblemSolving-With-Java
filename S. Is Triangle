@@ -1,0 +1,26 @@
+     import java.util.Scanner;
+    
+            public class Sheet {
+    
+            
+                public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    // The condition for the triangle to be valid, the sum of any two sides must be higher than the longest side.
+                    long a = f.nextLong();
+                    long b = f.nextLong();
+                    long c = f.nextLong();
+                    Long sum = (a+b+c) / 2 ; // To find the sum that is gonna be used in Heron's Formula
+                    double areaOfTrinagle = Math.sqrt(sum*(sum-a)*(sum-b)*(sum-c)); // Heron's Formula
+                    if(a+b>c&&b+c>a&&a+c>b){
+                        System.out.println("Valid");
+                        System.out.println(areaOfTrinagle);
+                    }
+                    else{
+                        System.out.println("Invalid");
+                    }
+                    
+
+                
+                }
+                
+    }
