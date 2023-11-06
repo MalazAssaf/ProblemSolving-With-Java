@@ -1,0 +1,44 @@
+    import java.util.Scanner;
+    
+            public class Sheet {
+    
+            
+                public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    long a = f.nextLong();
+                    long [] array = new long[10000];
+                    int w = 0;
+                    for(int i = 2; i<=a;i++){
+                        while(a%i==0){ // To see if the factor divide the number more than one time, for example, 1260/2 = 630, 630/2 = 315!
+                            array[w] = i;
+                            a/=i;
+                            w++;
+                        }
+                    }
+                    int counter = 0;
+                    for(int i =0; i<array.length; i++){ // To see the last stored element in the array
+                        if(array[i]==0){
+                            counter = i;
+                            break;
+                        }
+                    }
+                    
+                    for(int i = 0 ;i<=counter; i++){
+                        int x = i ; 
+                        long temp = array[i];
+                        if(temp!=0){
+                            int j = 0;
+                            while(temp==array[i]){ // to see the power of the number
+                            i++;
+                            j++;
+                            }
+                            System.out.print("("+array[x]+"^"+j+")");
+                            i--; // to decrese i, if I do not do that many items would be missed
+                        }
+                        if(i<counter-1){
+                        System.out.print('*');
+                    }
+                    }
+                }
+                
+    }
