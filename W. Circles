@@ -1,0 +1,41 @@
+    import java.math.BigInteger;
+import java.util.Scanner;
+    
+            public class Sheet {
+    
+            
+                public static void main(String[] args) {
+                    Scanner f = new Scanner(System.in);
+                    double x1 = f.nextDouble();
+                    double y1 = f.nextDouble();
+                    double x2 = f.nextDouble();
+                    double y2 = f.nextDouble();
+                    double centerH1 = (x1+x2)/2; // Get the x coordinate of the center
+                    double centerY1 = (y1+y2)/2; // Get the y coordinate of the center
+                    double diameter1 = Math.sqrt((Math.pow(x2-x1, 2)+Math.pow(y2-y1, 2))); // calculate the diameter of the first circle
+                    double redius1 = diameter1/2; // calculate the redius
+
+                    double x3 = f.nextDouble();
+                    double y3 = f.nextDouble();
+                    double x4 = f.nextDouble();
+                    double y4 = f.nextDouble();
+
+                    double centerH2 = (x3+x4)/2;
+                    double centerY2 = (y3+y4)/2;
+                    double diameter2 = Math.sqrt((Math.pow(x4-x3, 2)+Math.pow(y4-y3, 2)));
+                    double redius2 = diameter2/2;
+                    
+                    double radii = redius1+redius2;
+                    double distance = Math.sqrt((Math.pow(centerH2-centerH1, 2)+Math.pow(centerY2-centerY1, 2))); // Calculate the distance between the center of the first circle and the other circle
+
+                    if(radii>=distance){
+                        System.out.println("YES");
+                    }
+                    else{
+                        System.out.println("NO");
+                    }
+
+
+                }
+                
+    }
