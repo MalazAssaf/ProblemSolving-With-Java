@@ -1,0 +1,32 @@
+ import java.lang.reflect.Array;
+    import java.math.BigInteger;
+        import java.util.Scanner;
+            
+                    public class Sheet {
+                        static boolean reachVal(double num){
+                            if(num==1){
+                                return true;
+                            }
+                            else if(num<1){
+                                return false;
+                            }
+                            else{
+                                return reachVal(num/10) || reachVal(num/20); // Such a powerful technique to make the imput travers the whole tree O(2^n)
+                            }
+                            }
+                        
+                        public static void main(String[] args) {
+                            Scanner i = new Scanner(System.in);
+                            int counter = i.nextInt();
+                            while(counter>0){
+                                double t = i.nextDouble();
+                                if(reachVal(t)==true){
+                                    System.out.println("YES");
+                                }
+                                else{
+                                    System.out.println("NO");
+                                }
+                                counter--;
+                            }
+                    }
+            }
