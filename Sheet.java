@@ -1,36 +1,37 @@
-    import java.util.Scanner;
-        public class Sheet {
-            public static void main(String[] args) {
-                Scanner f = new Scanner (System.in);  
-                Scanner e = new Scanner (System.in);            
-                int a = f.nextInt();
-                int b = f.nextInt();
-                int j = a+b+1;
-                String array = "poo";
-                if(e.hasNextLine()){
-                   array = e.nextLine();
-                }
-                System.out.println(array.length());
-                char[] ch = new char[array.length()];
-                for (int i = 0; i < array.length(); i++) {
-                  ch[i] = array.charAt(i);
-                }
-              int counter=0;
-              for(int w = 0; w<array.length(); w++){
-                if((int)ch[w]>=48&&(int)ch[w]<=57&&w!=a){
-                  counter++;
-                }
-              }
-                if(ch[a]=='-'&&counter==a+b){
-                  System.out.println("Yes");
-                }
-                else{
-                  System.out.println("No");
-                }
-                e.close();
-              }
-            }
-                
-          
+import java.util.Scanner;
 
-        
+public class Sheet {
+                        public static void main(String[] args) {
+                            Scanner i = new Scanner(System.in);
+                            int n = i.nextInt(), m = i.nextInt();
+                            int[][] array = new int [20][20];
+                            int d = 0;
+                            int c = 0;
+                            while(d<m){
+                                c = i.nextInt();
+                                int v = i.nextInt();
+                                array [d][0] = c;
+                                array [d][1] = v;
+                                d++;
+                            }
+                            int profit = 0;
+                            while(n > 0){
+                                int x = 0;
+                                for(int w = 0; w<m;w++){
+                                    if(array[x][1]<array[w][1])
+                                        x=w;
+                                }
+                                if(n<=array[x][0]){
+                                    profit+=n*array[x][1];
+                                    System.out.println(profit);
+                                    break;
+                                }
+                                else{
+                                    profit+=array[x][0]*array[x][1];
+                                    n-= array[x][0];
+                                    array[x][1]=0;
+                                }
+                            }
+                        }
+                            }
+                    
